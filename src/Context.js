@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { storeProducts, detailProduct } from './setup-filese-react-phone-e-commerce-project-master/data';
-
+import Axios from 'axios'
 
 const ProductContext = React.createContext();
 //Whenever we create a context it comes with two things
@@ -165,6 +165,9 @@ class ProductProvider extends Component {
       })
    }
 
+
+
+  
    render() {
       return (
          <ProductContext.Provider value={{
@@ -177,6 +180,7 @@ class ProductProvider extends Component {
             increment: this.increment,
             decrement: this.decrement,
             removeItem: this.removeItem,
+            
          }}>
             {this.props.children}
          </ProductContext.Provider>

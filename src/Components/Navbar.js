@@ -21,9 +21,9 @@ https://www.iconfinder.com/Makoto_msk */}
       </Link>
      </li>
     </ul>
-    <Link to="/cart" className="ml-auto">
+    <Link to="/cart" className="ml-8">
      <ButtonContainer>
-       <span className="mr-2">
+       <span className="text-right">
       <i className="fas fa-cart-plus" />
       </span>
         My Cart
@@ -32,6 +32,7 @@ https://www.iconfinder.com/Makoto_msk */}
    </NavWrapper>
   )
  }
+ 
 }
 
 const NavWrapper = styled.nav`
