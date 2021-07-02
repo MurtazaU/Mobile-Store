@@ -10,8 +10,27 @@ body {
   background: var(--mainWhite) !important;
   color: var(--mainDark) !important;
 }
+.nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  z-index: 10;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+.nav-black {
+  background-color: var(--mainBlue);
+}
+.navbar-brand {
+  width: 80px;
+  padding-left: 20px;
+}
+
 .text-title {
-  font-family: 'Permanent', cursive;
+  font-family: 'Tourney', cursive;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }

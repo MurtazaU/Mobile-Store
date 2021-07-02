@@ -1,12 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import logo from '../setup-filese-react-phone-e-commerce-project-master/logo.svg'
 import styled from 'styled-components'
+import '../../src/App.css'
 
-export default class Navbar extends Component {
- render() {
+const Navbar = () => {
+  const [show, setShow] = useState(false)
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 100) {
+        setShow(true)
+      } else setShow(false);
+    })
+    return () => {
+      window.removeEventListener('scroll',)
+    }
+  }, [])
   return (
-   <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
+  //  <div className="navbar navbar-expand-sm px-sm-5">
+  <div className={`nav ${show && 'nav-black'}`}>
 
     <Link to="/">
          {/* https://www.iconfinder.com/icons/1243689/call_phone_icon
@@ -17,7 +30,9 @@ https://www.iconfinder.com/Makoto_msk */}
     <ul className="navbar-nav align-items-center">
      <li className="nav-item ml-5">
       <Link to="/" className="nav-link">
-       products
+        <NavLink>
+        <h3>Products</h3>
+        </NavLink>
       </Link>
      </li>
     </ul>
@@ -29,20 +44,21 @@ https://www.iconfinder.com/Makoto_msk */}
         My Cart
      </ButtonContainer>
     </Link>
-   </NavWrapper>
+   </div>
   )
- }
  
 }
 
-const NavWrapper = styled.nav`
-background: var(--mainBlue);
-.nav-link{
-  color:var(--mainWhite)!important;
-  font-size:1.3rem;
-  text-transform: capitalize;
-}
-`
+export default Navbar
+
+// // const NavWrapper = styled.nav`
+// // background: var(--mainBlue);
+// // .nav-link{
+// //   color:var(--mainWhite)!important;
+// //   font-size:1.3rem;
+// //   text-transform: capitalize;
+// // }
+// // `
 const ButtonContainer = styled.button `
 text-transform:capitalize;
 font-size:1.4rem;
@@ -62,6 +78,18 @@ transition:all 0.5s ease-in-out;
 &:focus{
   outline: none;
 }
+`
+const NavLink = styled.h1 `
+border-radius: 0.5rem;
+background: transparent;
+padding: 0.2rem 0.5rem;
 
-
+transition:all 0.5s ease-in-out;
+&:hover{
+  background: var(--lightBlue);
+  color: var(--mainBlue);
+}
+&:focus{
+  outline: none;
+}
 `

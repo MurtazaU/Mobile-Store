@@ -4,7 +4,6 @@ import Title from './Title'
 import {ProductConsumer} from '../Context'
 import SlideShow from './SlideShow'
 import images from './images'
-import Data from './getData'
 
 export default class ProductList extends Component {
   
@@ -12,8 +11,7 @@ export default class ProductList extends Component {
   return (
    <React.Fragment>
     <SlideShow images={images}/>
-    <Data />
-
+    {/* <Data /> */}
     <div className="py-5">
      <div className="container">
       <Title name="our" title="products" />

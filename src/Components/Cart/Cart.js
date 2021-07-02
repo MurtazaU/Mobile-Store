@@ -10,6 +10,9 @@ export default class Cart extends Component {
  render() {
   return (
    <section>
+    <br />
+    <br />
+    <br />
     <ProductConsumer>
      {value=>{
      const {cart} = value;
